@@ -1,14 +1,18 @@
 package com.xdj.spring.boot;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.util.StopWatch;
 
 
 @SpringBootApplication(scanBasePackages = "com.xdj.spring.boot")
-public class App {
+@Slf4j
+public class App
+{
 
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
         try
         {
             test();
@@ -31,7 +35,11 @@ public class App {
         // do something
         Thread.sleep(200);
         sw.stop();
-        System.out.println("sw.prettyPrint()~~~~~~~~~~~~~~~~~");
+//        sw.prettyPrint();
+//        System.out.println("sw.prettyPrint()~~~~~~~~~~~~~~~~~");
         System.out.println(sw.prettyPrint());
+        String sum = sw.shortSummary();
+        long total = sw.getTotalTimeMillis();
+        log.info("sum:{}, total:{}.", sum, total);
     }
 }

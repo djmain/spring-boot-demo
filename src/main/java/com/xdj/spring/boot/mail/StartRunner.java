@@ -18,11 +18,12 @@ public class StartRunner implements ApplicationRunner
     @Autowired
     MailService mailService;
 
+
     @Override
     public void run(ApplicationArguments args) throws Exception
     {
         System.out.println("begin runner.");
-        mailService.sendSimpleMail(new String[]{"xiadijun@126.com"}, "Mic", "China is great.");
+//        mailService.sendSimpleMail(new String[]{"xiadijun@126.com"}, "Mic", "China is great.");
         LOGGER.info("send {}, {}", "success", "Jack");
     }
 }
